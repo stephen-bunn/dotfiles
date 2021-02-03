@@ -1,0 +1,85 @@
+# Ignore everything
+/*
+
+# Specifically mark files that should be whitelisted
+!.gitignore
+
+# Config whitelist
+!/.config
+/.config/*
+
+# Dotfiles whitelist
+!/.config/docstrings
+
+# PtPython whitelist
+!/.config/ptpython
+/.config/ptpython/*
+!/.config/ptpython/config.py
+
+# Neovim whitelist
+!/.config/nvim
+/.config/nvim/*
+!/.config/nvim/init.vim
+
+# Alacritty whitelist
+!/.config/alacritty
+/.config/alacritty/*
+!/.config/alacritty/alacritty.yml
+!/.config/alacritty/dracula.yml
+
+# Dunst whitelist
+!/.config/dunst
+/.config/dunst/*
+!/.config/dunst/dunstrc
+
+# DWM whitelist
+!/.dwm
+/.dwm/*
+!/.dwm/autostart.sh
+
+# HTOP whitelist
+!/.config/htop
+/.config/htop/*
+!/.config/htop/htoprc
+
+# Bash whitelist
+!/.bashrc
+
+# Profile whitelist
+!/.profile
+
+# Tig whitelist
+!/.tigrc
+
+# Starship whitelist
+!/.config/starship.toml
+
+# Fish whitelist
+!/.config/fish
+/.config/fish/*
+!/.config/fish/fishfile
+!/.config/fish/config.fish
+!/.config/fish/fzf.fish
+!/.config/fish/nnn.fish
+
+# Git whitelist
+!/.gitconfig
+
+# Vim whitelist
+!/.vimrc
+
+# SXHKD whitelist
+!/.config/sxhkd
+/.config/sxhkd/*
+!/.config/sxhkd/sxhkdrc
+
+# Newsboat whitelist
+!/.newsboat
+/.newsboat/*
+!/.newsboat/urls
+
+# Scripts whitelist
+!/.scripts
+
+# X whitelist
+!/.Xresources
