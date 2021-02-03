@@ -4,6 +4,11 @@
 # Specifically mark files that should be whitelisted
 !.gitignore
 
+# Gnupg whitelist
+!/.gnupg
+/.gnupg/*
+!/.gnupg/gpg-agent.conf
+
 # Config whitelist
 !/.config
 /.config/*
