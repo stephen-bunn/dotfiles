@@ -4,6 +4,22 @@
 # Specifically mark files that should be whitelisted
 !.gitignore
 
+# DM whitelist
+!.dmrc
+
+# Dracula pro whitelist
+!.dracula-palette.md
+
+# Cargo whitelist
+!/.cargo
+/.cargo/*
+!/.cargo/.crates.toml
+
+# Rustup whitelist
+!/.rustup
+/.rustup/*
+!/.rustup/settings.toml
+
 # Gnupg whitelist
 !/.gnupg
 /.gnupg/*
