@@ -3,16 +3,13 @@
 # vim:ft=sxhkdrc
 # ----------------------
 
-ctrl + super + alt + Escape
-    $HOME/.scripts/restart-dwm.sh
-
 # reload sxhkd and its confniguration files
 super + Escape
     pkill -USR1 -x sxhkd
 
 # pulseaudio controls
 XF86AudioMute
-    $HOME/.scripts/mute-audio.sh
+    $HOME/.scripts/toggle-mute.sh
 
 XF86AudioRaiseVolume
     $HOME/.scripts/raise-volume.sh
@@ -27,4 +24,4 @@ XF86MonBrightnessDown
     $HOME/.scripts/lower-brightness.sh
 
 XF86AudioMicMute
-    $HOME/.scripts/mute-mic.sh
+    $HOME/.scripts/toggle-mic.sh
