@@ -11,4 +11,5 @@ slstatus &
 xcompmgr &
 sxhkd &
 dunst &
+xautolock -time 15 -locker $HOME/.scripts/lock.sh -notify 60 -notifier 'notify-send -t 5000 -- "Locking screen in 1 minute"' &
 
