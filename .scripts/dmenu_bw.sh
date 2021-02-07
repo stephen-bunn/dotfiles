@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# TODO: doesn't yet handle ctrl+c in dmenu prompts
+
 DEPENDENCIES="dmenu bw jq xclip";
 for dep_name in $DEPENDENCIES
 do

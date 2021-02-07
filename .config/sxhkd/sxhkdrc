@@ -8,8 +8,11 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 # DMENU Bitwarden prompt
-alt + shift + p
+super + alt + p
     $HOME/.scripts/dmenu_bw.sh
+
+super + l
+    $HOME/.scripts/lock.sh
 
 # pulseaudio controls
 XF86AudioMute
