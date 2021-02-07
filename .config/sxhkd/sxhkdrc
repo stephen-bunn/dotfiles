@@ -25,3 +25,7 @@ XF86MonBrightnessDown
 
 XF86AudioMicMute
     $HOME/.scripts/toggle-mic.sh
+
+XF86Favorites
+    $HOME/.scripts/toggle-vpn.sh
+
