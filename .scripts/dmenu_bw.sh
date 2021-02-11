@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-# TODO: doesn't yet handle ctrl+c in dmenu prompts
-
 DEPENDENCIES="dmenu bw jq xclip";
 for dep_name in $DEPENDENCIES
 do
@@ -15,7 +13,12 @@ SESSION_FILE=/tmp/dmenu_bw.session;
 
 # handle establishing a session ID and persisting it to some temporary store
 establish_session() {
-    session=$(bw unlock $(echo "" | dmenu -p "Bitwarden Master Password" -P) --raw 2>&1);
+    master=$(echo "" | dmenu -p "Bitwarden Master Password" -P);
+    if [ -z $master ]; then
+        exit 1;
+    fi
+
+    session=$(bw unlock "$master" --raw 2>&1);
     if [ "$session" = 'Invalid master password.' ]; then
         notify-send -u critical -h STRING:synchronous:dmenu_bw -t 3000 -- 'Bitwarden' 'Invalid Master Password';
         exit 1;
@@ -42,11 +45,19 @@ items=$(bw list items | jq -r '.[] | .name + " (" + .login.username + ") [" + .i
 
 # prompt the user with items and extract the ID of the selected item
 selected=$(echo "$items" | dmenu -r -p "Bitwarden");
+if [ -z $selected ]; then
+    exit 1;
+fi
+
 selected_name=$(echo "$selected" | sed -E 's/^(.*)\[.*$/\1/');
 selected_id=$(echo "$selected" | sed -E 's/^.*\[(.*)\]$/\1/');
 
 # prompt the user with fields and copy the desired field from the Bitwarden item
 field=$(echo 'Username\nPassword\nTOTP' | dmenu -r -i -p "Bitwarden Field");
+if [ -z $field ]; then
+    exit 1;
+fi
+
 content=$(bw get $(echo "$field" | tr '[A-Z]' '[a-z]') "$selected_id");
 if [ -z "$content" ]; then
     notify-send -u critical -h STRING:synchronous:dmenu_bw -t 3000 -- 'Bitwarden' "No $field defined for $selected_name";

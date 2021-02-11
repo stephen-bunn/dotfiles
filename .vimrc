@@ -265,6 +265,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mcchrish/nnn.vim'
+Plug 'dense-analysis/ale'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -299,7 +301,6 @@ function! s:check_back_space() abort "{{{
 endfunction"}}}
 
 " Dracula Pro
-packadd! dracula
 let g:dracula_colorterm = 0
 
 " Set colorscheme
