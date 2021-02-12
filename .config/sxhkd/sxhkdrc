@@ -11,6 +11,9 @@ super + Escape
 super + alt + p
     $HOME/.scripts/dmenu_bw.sh
 
+super + alt + r
+    $HOME/.scripts/dmenu_run.sh
+
 super + l
     $HOME/.scripts/lock.sh
 
