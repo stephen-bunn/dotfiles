@@ -48,6 +48,11 @@
 !/.config/alacritty/alacritty.yml
 !/.config/alacritty/dracula.yml
 
+# Spotifyd whitelist
+!/.config/spotifyd
+/.config/spotifyd/*
+!/.config/spotifyd/spotifyd.conf
+
 # Dunst whitelist
 !/.config/dunst
 /.config/dunst/*
