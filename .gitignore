@@ -37,6 +37,11 @@
 /.config/ptpython/*
 !/.config/ptpython/config.py
 
+# Spotify TUI whitelist
+!/.config/spotify-tui
+/.config/spotify-tui/*
+!/.config/spotify-tui/config.yml
+
 # Neovim whitelist
 !/.config/nvim
 /.config/nvim/*
