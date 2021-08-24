@@ -1,6 +1,6 @@
 set fish_greeting
 set -gx GPG_TTY (tty)
-set -gx EDITOR vim
+set -gx EDITOR nvim
 set -gx TERMINAL alacritty
 set -gx PYENV_ROOT $HOME/.pyenv
 set -gx NVM_DIR $HOME/.nvm
@@ -11,12 +11,13 @@ set -gx VIRTUALFISH_HOME $HOME/.local/share/virtualenvs
 set -gx PATH $HOME/.local/bin $HOME/.diff-so-fancy/bin $PYENV_ROOT/shims $PYENV_ROOT/bin $HOME/.cargo/bin $PATH
 
 alias top htop
-alias vi vim
-alias v vim
-alias n "nnn -d"
+alias vim nvim
+alias vi nvim
+alias v nvim
 
 source $HOME/.config/fish/nnn.fish
 source $HOME/.config/fish/fzf.fish
+source $HOME/.config/fish/n.fish
 
 pyenv init - | source
 starship init fish | source

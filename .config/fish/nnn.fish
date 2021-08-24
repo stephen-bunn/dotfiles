@@ -16,3 +16,5 @@ export NNN_FCOLORS="0d0c040200060508010b0903"
 
 alias nnn="nnn -e"
 set --export NNN_FIFO "/tmp/nnn.fifo"
+set --export NNN_TMPFILE "$HOME/.config/nnn/.lastd"
+
