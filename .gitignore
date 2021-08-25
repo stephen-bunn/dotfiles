@@ -92,6 +92,7 @@
 !/.config/fish/config.fish
 !/.config/fish/fzf.fish
 !/.config/fish/nnn.fish
+!/.config/fish/n.fish
 
 # Git whitelist
 !/.gitconfig
