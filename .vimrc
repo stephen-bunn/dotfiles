@@ -261,12 +261,16 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'gabrielelana/vim-markdown'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mcchrish/nnn.vim'
 Plug 'dense-analysis/ale'
+Plug 'vimwiki/vimwiki'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/goyo.vim'
+Plug 'reedes/vim-pencil'
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -312,3 +316,20 @@ highlight Pmenu ctermfg=NONE ctermbg=Black guibg=#454158 guifg=#f8f8f2
 highlight PmenuSel ctermfg=NONE ctermbg=Blue guibg=#9580ff guifg=#f8f8f2
 highlight PmenuSbar ctermfg=NONE ctermbg=Black guibg=#454159 guifg=NONE
 highlight PmenuThumb ctermfg=NONE ctermbg=Blue guibg=#7970a9 guifg=NONE
+
+" Prose configuration
+function! Prose(bang)
+    let proseWidth = 88
+    
+    if a:bang
+        if exists('#goyo')
+            call goyo#execute(!0, proseWidth)
+        endif
+        call pencil#init({'wrap': 'off'})
+    else
+        call pencil#init({'wrap': 'hard', 'textwidth': proseWidth, 'autoformat': 1})
+        call goyo#execute(0, proseWidth + 2)
+    end
+endfunction
+
+command! -nargs=0 -bang Prose call Prose(<bang>0)
